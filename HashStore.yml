@@ -71,7 +71,7 @@
     :snipe: 2.0
   :skillTotal: 28.0
 :38192dd9128f131b72b10a63fac8fef2e8471f24:
-  :name: "[WAZA] SnX// #BuffSEN"
+  :name: SnX//
   :hash: 38192dd9128f131b72b10a63fac8fef2e8471f24
   :playerSkills:
     :hof: 3.0
@@ -147,9 +147,9 @@
   :playerSkills:
     :hof: 2.0
     :ld: 0.0
-    :gamesense: 8.0
+    :gamesense: 7.0
     :cap: 6.0
-    :fragging: 5.0
+    :fragging: 4.0
     :offence: 5.0
     :snipe: 8.0
   :skillTotal: 34.0
@@ -451,7 +451,7 @@
     :snipe: 9.0
   :skillTotal: 17.0
 :7a7e00a96aa8854664225fb9b3e2b47aa68b79ee:
-  :name: Tali
+  :name: Zireael
   :hash: 7a7e00a96aa8854664225fb9b3e2b47aa68b79ee
   :playerSkills:
     :hof: 2.0
@@ -727,6 +727,162 @@
 :10863d3fd4488dcd458ef09c7002cb1564ac800c:
   :name: Mud
   :hash: 10863d3fd4488dcd458ef09c7002cb1564ac800c
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:d783f656bb3a769ed220762c0306b8a1e7616132:
+  :name: GrandmaTaco
+  :hash: d783f656bb3a769ed220762c0306b8a1e7616132
+  :playerSkills:
+    :hof: 5.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:20be86e11ab566c8e2d1badd5bb4b9699a234ddc:
+  :name: EpsilonAlpha
+  :hash: 20be86e11ab566c8e2d1badd5bb4b9699a234ddc
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:ad0e7cdd20258c07c1767bbaa5ab725e6eace168:
+  :name: MattMellander
+  :hash: ad0e7cdd20258c07c1767bbaa5ab725e6eace168
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:1a8218e14b1cd1b49e56fc6cfe5d938a92ea6c89:
+  :name: DANGER
+  :hash: 1a8218e14b1cd1b49e56fc6cfe5d938a92ea6c89
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:d16215be01fe115c500f18fee1d4d39a0a6f8ebe:
+  :name: hawKske
+  :hash: d16215be01fe115c500f18fee1d4d39a0a6f8ebe
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:7d7bc388bf54d561317be232915a4202c00f2e58:
+  :name: woof
+  :hash: 7d7bc388bf54d561317be232915a4202c00f2e58
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:9f9b2ac9a9c433c7f8e587b454977511aeb33c18:
+  :name: WheelieTron3000
+  :hash: 9f9b2ac9a9c433c7f8e587b454977511aeb33c18
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:671e931c63ea885c618c638fb3ba0d3342a3ab11:
+  :name: Dubheem
+  :hash: 671e931c63ea885c618c638fb3ba0d3342a3ab11
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:b599b0ff8712e5c7c72b41d1473126425d1d5b3c:
+  :name: XU1
+  :hash: b599b0ff8712e5c7c72b41d1473126425d1d5b3c
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:38edcddfb051c65fb977b58b54b87906a460fc5e:
+  :name: Yoshanuikabundi
+  :hash: 38edcddfb051c65fb977b58b54b87906a460fc5e
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:1af2f34bef6a4fb96111e121220527a588d2a311:
+  :name: Lambda
+  :hash: 1af2f34bef6a4fb96111e121220527a588d2a311
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:fc9f4ac18d4579d546c3a1b486ace7ecb712ce48:
+  :name: Aukeraii
+  :hash: fc9f4ac18d4579d546c3a1b486ace7ecb712ce48
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :gamesense: 3.0
+    :cap: 2.0
+    :fragging: 3.0
+    :offence: 4.0
+    :snipe: 1.0
+  :skillTotal: 17.0
+:cdc9a6f33aa26b4ab53472dedd90098834c23b42:
+  :name: Winter
+  :hash: cdc9a6f33aa26b4ab53472dedd90098834c23b42
   :playerSkills:
     :hof: 2.0
     :ld: 2.0

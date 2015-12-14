@@ -1,8 +1,8 @@
 #!/bin/ruby
 
 require 'mumble-ruby'
-require 'pp'
 require 'yaml'
+#require 'pp'
 
 class Shaz_Bot
 	attr_accessor :cli
@@ -33,40 +33,20 @@ class Shaz_Bot
                 tmpH.merge!(:playerSkills => defautPlayerSkills)
                 pp (tmpH)
                 players.merge!(:"#{hshNm}" => tmpH)
-            end
-            #make the feature that puts the usr into a hash
+            end #make the feature that puts the usr into a hash
         end
-        File.open('HashStore.yml','w') {|f1| f1.write(players.to_yaml)} #then here commit all those hashes to the players{} hash and save that to the hash file.
+        File.open('HashStore.yml','w') {|f1| f1.write(players.to_yaml)} #here commit all those hashes to the players{} hash and save that to the hash file.
     end	
 
-	def onlinePlayers
-        onPlayers = {}
-        for i in 0..@cli.users.count-1 do
-            usrkey = @cli.users.keys[i]
-            hshNm = @cli.users[usrkey].hash
-            tmpH = {:hash => @cli.users[usrkey].hash}
-            if @cli.users[usrkey].channel_id == 81 or @cli.users[usrkey].channel_id == 102 then
-                tmpH.merge!(:fat => true)
-                onPlayers.merge!(:"#{hshNm}" => tmpH)
-            elsif @cli.users[usrkey].channel_id == 79 or @cli.users[usrkey].channel_id == 85 then
-                tmpH.merge!(:fat => false)
-                onPlayers.merge!(:"#{hshNm}" => tmpH)
-            else
-                tmpH.clear
-            end
-        end
-        return onPlayers
-    end
-
-	def btrOnlinePlayers
+	def onlinePlayers # Gets a hash list of all online players and their position.
 		onPlayers = {}
 		for i in 0..@cli.users.count-1 do
 			usrkey = @cli.users.keys[i]
 			hshNm = @cli.users[usrkey].hash
 			if @cli.users[usrkey].channel_id == 81 or @cli.users[usrkey].channel_id == 102 then
-				onPlayers.merge!(:"#{hshNm}" => true)
+				onPlayers.merge!(:"#{hshNm}" => true) # The key is used to store player hash data and the true/false stores fat data for said player
 			elsif @cli.users[usrkey].channel_id == 79 or @cli.users[usrkey].channel_id == 85 then
-				onPlayers.merge!(:"#{hshNm}" => false)
+				onPlayers.merge!(:"#{hshNm}" => false) # As above except false for not fat
 			end
 		end
 		return onPlayers
@@ -75,7 +55,7 @@ class Shaz_Bot
 	def teamMove(teamHash, room)
 		for i in 0..teamHash.length-1 do
 			@cli.move_user_hash(teamHash[teamHash.keys[i]][:hash],room) # this calls a function in the mumble-ruby library which moves users via their hash
-			sleep(1) # sleep just because it makes the movement look nicer :D
+			sleep(1) # sleep just because it makes the movement of players look nicer :D
 		end
 	end
 
@@ -84,31 +64,21 @@ class Shaz_Bot
 		teamDS = {}
 		playeryml = YAML.load_file('HashStore.yml')
 		onlinePlayerList = onlinePlayers()
-		btrOnlinePlayerList = btrOnlinePlayers()
-		pp btrOnlinePlayerList
-		puts btrOnlinePlayerList.key(true)
 		for i in 0..@roleList.length-1 do
 			playerSelected = simpleSelect("BE", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
 			teamBE[:"#{@roleList.keys[i]}"] = playerSelected
-		end
-		for i in 0..@roleList.length-1 do
 			playerSelected = simpleSelect("DS", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
 			teamDS[:"#{@roleList.keys[i]}"] = playerSelected
 		end
 		while onlinePlayerList.has_value?(true) do # this loop is used to first check for any fat people not picked
-			puts "the missed fat check worked"
-			puts onlinePlayerList.key(true)
+			puts onlinePlayerList.key(true) # This will select an unselected fatman, and when I have time, the sort in function will come after
 			break
 		end
-=begin
-		pp teamBE
-		pp teamDS
-		teamMove(teamBE, 82)
-		teamMove(teamDS, 83)
-=end
+#		teamMove(teamBE, 82)
+#		teamMove(teamDS, 83)
 	end
 
-	def simpleSelect(team, role, severity, playerlist)
+	def simpleSelect(team, role, severity, playerlist) # Ask Mcoot about this
 		skillyml = {}
 		playerDataList = YAML.load_file('HashStore.yml')
 		for i in 0..playerlist.length-1 do
@@ -125,7 +95,7 @@ class Shaz_Bot
 		randomNumber = rand(skillyml.values.flatten.max)
 		for i in 0..skillyml.length-1 do
 			if skillyml[:"#{skillyml.keys[i]}"].include?(randomNumber) then
-				puts "#{skillyml.keys[i]} picked for the role"
+				puts "#{skillyml.keys[i]} picked for #{team}'s #{role} and their score is #{skillyml[skillyml.keys[i]]}"
 				return playerlist.delete(:"#{skillyml.keys[i]}")
 			end
 		end
@@ -136,5 +106,5 @@ shazbot = Shaz_Bot.new
 shazbot.cli.connect
 sleep(2)
 shazbot.hashYmlUpdate
-#shazbot.onlinePlayers
+shazbot.hashYmlUpdate
 shazbot.teamCompositionGet
