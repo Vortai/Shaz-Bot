@@ -2,7 +2,7 @@
 
 require 'mumble-ruby'
 require 'yaml'
-#require 'pp'
+require 'pp'
 
 class Shaz_Bot
 	attr_accessor :cli
@@ -43,7 +43,7 @@ class Shaz_Bot
 		for i in 0..@cli.users.count-1 do
 			usrkey = @cli.users.keys[i]
 			hshNm = @cli.users[usrkey].hash
-			if @cli.users[usrkey].channel_id == 81 or @cli.users[usrkey].channel_id == 102 then
+			if @cli.users[usrkey].channel_id == 81 or @cli.users[usrkey].channel_id == 102 then # note that the room numbers are currently chosen per mumble
 				onPlayers.merge!(:"#{hshNm}" => true) # The key is used to store player hash data and the true/false stores fat data for said player
 			elsif @cli.users[usrkey].channel_id == 79 or @cli.users[usrkey].channel_id == 85 then
 				onPlayers.merge!(:"#{hshNm}" => false) # As above except false for not fat
@@ -74,8 +74,8 @@ class Shaz_Bot
 			puts onlinePlayerList.key(true) # This will select an unselected fatman, and when I have time, the sort in function will come after
 			break
 		end
-#		teamMove(teamBE, 82)
-#		teamMove(teamDS, 83)
+		teamMove(teamBE, 82)
+		teamMove(teamDS, 83)
 	end
 
 	def simpleSelect(team, role, severity, playerlist) # Ask Mcoot about this
