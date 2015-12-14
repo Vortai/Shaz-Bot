@@ -6,6 +6,7 @@ Currently Shaz-Bot works, but barely. It can connect, analyse users and move the
 
 ## Plan
 My roadmap currently involves several parts.
+
 1. Get the database to a point where using the bot might actually be worth the time.
 2. Implement the algorithm for ensuring no fats are left behind.
 3. Make a .ini file general users can edit to better suit their own mumble situations.
