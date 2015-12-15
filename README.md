@@ -28,7 +28,7 @@ def move_user_hash(hash, channel)
 	cid = channel_id channel
 	uhid = user_session_hash hash
 	send_user_state(session: uhid, channel_id: cid)
-	channels[uhiend
+	channels[uhid]
 end
 ```
 
