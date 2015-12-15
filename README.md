@@ -17,3 +17,30 @@ Some pipe dreams include fleshing out my prototype skill select to better allow 
 
 ## Help
 Currently the biggest help would be for players to either edit the HashStore.yml and then pushing it to the github or otherwise editing their entry and sending it to me.
+
+## Install advice
+So as this is a ruby program you obviously need ruby. First install the ruby gem of mumble-ruby and then navigate /home/$USER/.gem/ruby/2.2.0/gems/mumble-ruby-1.1.3/lib/mumble-ruby and make the following changes to the client.rb file.
+
+near the move_user segment add
+
+```
+def move_user_hash(hash, channel)
+	cid = channel_id channel
+	uhid = user_session_hash hash
+	send_user_state(session: uhid, channel_id: cid)
+	channels[uhiend
+end
+```
+
+then in the private section of the file add
+
+```
+def user_session_hash(hash)
+	hash = find_user_hash(hash) if hash.is_a? String
+	id = hash.respond_to?(:session) ? hash.session : hash
+
+	raise UserNotFound unless @users.has_key? id
+	id
+end
+```
+
