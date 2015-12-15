@@ -53,7 +53,7 @@ class Shaz_Bot
 
 	def teamMove(teamHash, room)
 		for i in 0..teamHash.length-1 do
-			@cli.move_user_hash(teamHash[teamHash.keys[i]][:hash],room) # this calls a function in the mumble-ruby library which moves users via their hash
+			@cli.move_user_hash(teamHash[:"#{teamHash.keys[i]}"],room) # this calls a function in the mumble-ruby library which moves users via their hash
 			sleep(1) # sleep just because it makes the movement of players look nicer :D
 		end
 	end
@@ -65,14 +65,17 @@ class Shaz_Bot
 		onlinePlayerList = onlinePlayers()
 		for i in 0..@roleList.length-1 do
 			playerSelected = simpleSelect("BE", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			pp playerSelected
 			teamBE[:"#{@roleList.keys[i]}"] = playerSelected
 			playerSelected = simpleSelect("DS", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			pp playerSelected
 			teamDS[:"#{@roleList.keys[i]}"] = playerSelected
 		end
 		while onlinePlayerList.has_value?(true) do # this loop is used to first check for any fat people not picked
 			puts onlinePlayerList.key(true) # This will select an unselected fatman, and when I have time, the sort in function will come after
 			break
 		end
+		pp teamBE
 		teamMove(teamBE, 82) # The room here is the Blood Eagle mumble room
 		teamMove(teamDS, 83) # The number here is the Diamond Sword room
 	end
@@ -95,7 +98,8 @@ class Shaz_Bot
 		for i in 0..skillyml.length-1 do
 			if skillyml[:"#{skillyml.keys[i]}"].include?(randomNumber) then
 				puts "#{skillyml.keys[i]} picked for #{team}'s #{role} and their score is #{skillyml[skillyml.keys[i]]}"
-				return playerlist.delete(:"#{skillyml.keys[i]}")
+				playerlist.delete(skillyml.keys[i])
+				return "#{skillyml.keys[i]}"
 			end
 		end
 	end
