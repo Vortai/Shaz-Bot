@@ -43,4 +43,4 @@ def user_session_hash(hash)
 	id
 end
 ```
-
+Then inside the Shaz-Bot.rb file you'll need to edit parts of the code, which I've tried to clearly comment for whatever server you're using the bot in. For example the line '@cli = Mumble::Client.new("mate.cheapmumble.com","2032","Shaz-Bot","") # the mumble bot basic config, defining the server, the port and name' is where you would put the address of your mumble server, its port and the name of your bot.

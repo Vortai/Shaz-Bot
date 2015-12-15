@@ -8,8 +8,8 @@ class Shaz_Bot
 	attr_accessor :cli
 
 	def initialize
-		@cli = Mumble::Client.new("mate.cheapmumble.com","2032","Shaz-Bot","")
-		@roleList = {:role1 => :hof, :role2 => :cap, :role3 => :ld, :role4 => :snipe, :role5 => :offence, :role6 => :offence, :role7 => :offence}
+		@cli = Mumble::Client.new("mate.cheapmumble.com","2032","Shaz-Bot","") # the mumble bot basic config, defining the server, the port and name
+		@roleList = {:role1 => :hof, :role2 => :cap, :role3 => :ld, :role4 => :snipe, :role5 => :offence, :role6 => :offence, :role7 => :offence} # the role's to be picked
 	end
 
 	def hashYmlUpdate
@@ -18,8 +18,7 @@ class Shaz_Bot
             usrkey = @cli.users.keys[i]
             hshNm = @cli.users[usrkey].hash
             if players.include?(:"#{hshNm}") == true then
-                puts "the players current name is #{@cli.users[usrkey].name}"
-                puts "the channel id is #{@cli.users[usrkey].channel_id}"
+                puts "the players current name is #{@cli.users[usrkey].name} and the channel id is #{@cli.users[usrkey].channel_id}"
                 players[:"#{hshNm}"][:name] = @cli.users[usrkey].name
                 total = 0
                 for i in 0..6 do
@@ -74,8 +73,8 @@ class Shaz_Bot
 			puts onlinePlayerList.key(true) # This will select an unselected fatman, and when I have time, the sort in function will come after
 			break
 		end
-		teamMove(teamBE, 82)
-		teamMove(teamDS, 83)
+		teamMove(teamBE, 82) # The room here is the Blood Eagle mumble room
+		teamMove(teamDS, 83) # The number here is the Diamond Sword room
 	end
 
 	def simpleSelect(team, role, severity, playerlist) # Ask Mcoot about this
