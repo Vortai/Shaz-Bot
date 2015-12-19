@@ -1,0 +1,24 @@
+username: Shaz-Bot
+password: 
+address: 127.0.0.1
+port: 64738
+team1:
+    name: Blood Eagle
+    room: 1
+team2:
+    name: Diamond Sword
+    room: 2
+waiting_players:
+    normal: 3
+    quiet: 4
+priority_players:
+    normal: 5
+    quiet: 6
+role_List:
+    role1: :hof
+    role2: :cap
+    role3: :ld
+    role4: :snipe
+    role5: :offence
+    role6: :offence
+    role7: :offence

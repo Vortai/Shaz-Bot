@@ -4,11 +4,22 @@ require 'mumble-ruby'
 require 'yaml'
 require 'pp'
 
+begin
+	CONFIG = YAML.load_file('config.yml') unless defined? CONFIG
+rescue Errno::ENOENT
+	abort 'Config.yml not found. You can copy, rename and edit config-sample.yml to fix this problem.'
+end
+STDOUT.sync = true
+
+
 class Shaz_Bot
 	attr_accessor :cli
 
 	def initialize
-		@cli = Mumble::Client.new("mate.cheapmumble.com","2032","Shaz-Bot","") # the mumble bot basic config, defining the server, the port and name
+		@cli = Mumble::Client.new(CONFIG['address'], CONFIG['port']) do |conf| # This segment inherits the bots basic data from the config.yml file
+			conf.username = CONFIG['username']
+			conf.password = CONFIG['password'] if CONFIG['password']
+		end			
 		@roleList = {:role1 => :hof, :role2 => :cap, :role3 => :ld, :role4 => :snipe, :role5 => :offence, :role6 => :offence, :role7 => :offence} # the role's to be picked
 	end
 
@@ -42,9 +53,8 @@ class Shaz_Bot
 		for i in 0..@cli.users.count-1 do
 			usrkey = @cli.users.keys[i]
 			hshNm = @cli.users[usrkey].hash
-			if @cli.users[usrkey].channel_id == 81 or @cli.users[usrkey].channel_id == 102 then # note that the room numbers are currently chosen per mumble
-				onPlayers.merge!(:"#{hshNm}" => true) # The key is used to store player hash data and the true/false stores fat data for said player
-			elsif @cli.users[usrkey].channel_id == 79 or @cli.users[usrkey].channel_id == 85 then
+			if @cli.users[usrkey].channel_id == CONFIG['priority_players']['normal'] or @cli.users[usrkey].channel_id == CONFIG['priority_players']['quiet'] then				onPlayers.merge!(:"#{hshNm}" => true) # The key is used to store player hash data and the true/false stores fat data for said player
+			elsif @cli.users[usrkey].channel_id == CONFIG['waiting_players']['normal'] or @cli.users[usrkey].channel_id == CONFIG['waiting_players']['quiet'] then
 				onPlayers.merge!(:"#{hshNm}" => false) # As above except false for not fat
 			end
 		end
@@ -64,10 +74,10 @@ class Shaz_Bot
 		playeryml = YAML.load_file('HashStore.yml')
 		onlinePlayerList = onlinePlayers()
 		for i in 0..@roleList.length-1 do
-			playerSelected = simpleSelect("BE", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			playerSelected = simpleSelect(CONFIG['team1']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList)
 			pp playerSelected
 			teamBE[:"#{@roleList.keys[i]}"] = playerSelected
-			playerSelected = simpleSelect("DS", @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			playerSelected = simpleSelect(CONFIG['team2']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList)
 			pp playerSelected
 			teamDS[:"#{@roleList.keys[i]}"] = playerSelected
 		end
@@ -76,8 +86,8 @@ class Shaz_Bot
 			break
 		end
 		pp teamBE
-		teamMove(teamBE, 82) # The room here is the Blood Eagle mumble room
-		teamMove(teamDS, 83) # The number here is the Diamond Sword room
+		teamMove(teamBE, CONFIG['team1']['room']) # The room here is the Blood Eagle mumble room
+		teamMove(teamDS, CONFIG['team2']['room']) # The number here is the Diamond Sword room
 	end
 
 	def simpleSelect(team, role, severity, playerlist) # Ask Mcoot about this
