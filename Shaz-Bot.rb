@@ -24,6 +24,10 @@ class Shaz_Bot
 		userInput
 	end
 
+	def get_username_from_id(id)
+		@cli.users[id].name
+	end
+
 	def hashYmlUpdate
 		players = YAML.load_file('HashStore.yml')
 		for i in 0..@cli.users.count-1 do
@@ -131,6 +135,8 @@ class Shaz_Bot
 	def userInput
 		@cli.on_text_message do |msg|
 			puts msg.message
+			puts "#{get_username_from_id(msg.actor)}"
+			hashYmlUpdate
 			hashYmlUpdate
 			teamCompositionGet
 		end
