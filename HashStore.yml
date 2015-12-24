@@ -19,10 +19,10 @@
     :ld: 6.0
     :gamesense: 4.0
     :cap: 2.0
-    :fragging: 5.0
+    :fragging: 6.0
     :offence: 6.0
     :snipe: 5.0
-  :skillTotal: 30.0
+  :skillTotal: 31.0
 :611f56cb7ab978681736d1a1a2dd32a75062060d:
   :name: PSYCHODONKEYMAN
   :hash: 611f56cb7ab978681736d1a1a2dd32a75062060d
@@ -386,14 +386,14 @@
   :name: seldom
   :hash: 68e96e1b0f4447ef5749bbc647f2e2cfc1e40b61
   :playerSkills:
-    :hof: 4.0
-    :ld: 3.0
+    :hof: 3.0
+    :ld: 2.0
     :gamesense: 5.0
-    :cap: 4.0
+    :cap: 3.0
     :fragging: 6.0
     :offence: 8.0
     :snipe: 1.0
-  :skillTotal: 31.0
+  :skillTotal: 28.0
 :8bb69e710569ba6c966800d8ea7d47b3445636fb:
   :name: Rogopotato
   :hash: 8bb69e710569ba6c966800d8ea7d47b3445636fb
@@ -848,9 +848,9 @@
     :gamesense: 7.0
     :cap: 5.0
     :fragging: 5.0
-    :offence: 5.0
+    :offence: 8.0
     :snipe: 1.0
-  :skillTotal: 33.0
+  :skillTotal: 36.0
 :38edcddfb051c65fb977b58b54b87906a460fc5e:
   :name: Yoshanuikabundi
   :hash: 38edcddfb051c65fb977b58b54b87906a460fc5e

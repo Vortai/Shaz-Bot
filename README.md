@@ -2,7 +2,7 @@
 A little mumble bot for making teams
 
 ## State
-Currently Shaz-Bot works, but barely. It can connect, analyse users and move them to pre-coded rooms that have currently been hard coded into it. It also can't guarantee that it will pick fat people. Furthermore it relies on code I hacked into its main dependency, the mumble-ruby library. However what it can do is pick people for teams, and then move them to rooms, and automatically update its database with mumble visable changes to a player (such as their name). In addition it can now be controlled (albeit very limitedly) through the mumble server it is connected to.
+Currently Shaz-Bot works, but barely. It can connect, analyse users, and move them to pre-coded rooms which have currently been hard coded into it. It also can't guarantee that it will pick fat people. Furthermore it relies on code I hacked into its main dependency, the mumble-ruby library. However what it can do is pick people for teams, and then move them to rooms, and automatically update its database with mumble visible changes to a player (such as their name). In addition it can now be controlled in a limited fashion through the mumble server it is connected to.
 
 ## Plan
 My roadmap currently involves several parts.
