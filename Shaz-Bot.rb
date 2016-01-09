@@ -20,12 +20,36 @@ class Shaz_Bot
 			conf.username = CONFIG['username']
 			conf.password = CONFIG['password'] if CONFIG['password']
 		end
-		@roleList = CONFIG['role_List']
+		@roleList = CONFIG['team_role_composition']
 		userInput
 	end
 
 	def get_username_from_id(id)
 		@cli.users[id].name
+	end
+
+	def get_userkey(id)
+		@cli.user.keys[id]
+	end
+	
+	def move_missed_to_fat
+		for i in 0..@cli.users.count-1 do
+			userkey = @cli.users.keys[i]
+			if @cli.users[userkey].channel_id == CONFIG['waiting_players']['normal'] then
+				@cli.move_user(userkey,CONFIG['priority_players']['normal'])
+			elsif @cli.users[userkey].channel_id == CONFIG['waiting_players']['quiet'] then
+				@cli.move_user(userkey,CONFIG['priority_players']['quiet'])
+			end
+		end
+	end
+
+	def return_to_pugs
+		for i in 0..@cli.users.count-1 do
+			userkey = @cli.users.keys[i]
+			if @cli.users[userkey].channel_id == CONFIG['team1']['room'] or CONFIG['team2']['room'] then
+				@cli.move_user(userkey,CONFIG['waiting_players']['normal'])
+			end
+		end
 	end
 
 	def hashYmlUpdate
@@ -48,7 +72,8 @@ class Shaz_Bot
 				tmpH.merge!(:playerSkills => defautPlayerSkills)
 				pp (tmpH)
 				players.merge!(:"#{hshNm}" => tmpH)
-			end #make the feature that puts the usr into a hash
+				players[:"#{hshNm}"].merge!(:skillTotal => 17.0)
+			end
 		end
 		File.open('HashStore.yml','w') {|f1| f1.write(players.to_yaml)} #here commit all those hashes to the players{} hash and save that to the hash file.
 	end
@@ -77,6 +102,7 @@ class Shaz_Bot
 	def teamCompositionGet
 		teamBE = {}
 		teamDS = {}
+		selected_fats = []
 		playeryml = YAML.load_file('HashStore.yml')
 		onlinePlayerList = onlinePlayers()
 		if onlinePlayerList.length < 14 then
@@ -84,23 +110,30 @@ class Shaz_Bot
 			return
 		end
 		for i in 0..@roleList.length-1 do
-			playerSelected = simpleSelect(CONFIG['team1']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			playerSelected = simpleSelect(CONFIG['team1']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList, selected_fats)
 			pp playerSelected
 			teamBE[:"#{@roleList.keys[i]}"] = playerSelected
-			playerSelected = simpleSelect(CONFIG['team2']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList)
+			playerSelected = simpleSelect(CONFIG['team2']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList, selected_fats)
 			pp playerSelected
 			teamDS[:"#{@roleList.keys[i]}"] = playerSelected
 		end
 		while onlinePlayerList.has_value?(true) do # this loop is used to first check for any fat people not picked
 			puts onlinePlayerList.key(true) # This will select an unselected fatman, and when I have time, the sort in function will come after
-			break
+			pp selected_fats
+			selected_player = teamBE.to_a.sample(1).to_h
+			if selected_fats.include?(selected_player[selected_player.keys[0]]) == false then
+				teamBE[selected_player.keys[0]] = onlinePlayerList.key(true)
+				onlinePlayerList.delete(onlinePlayerList.key(true))
+			end
 		end
 		pp teamBE
+		pp teamDS
 		teamMove(teamBE, CONFIG['team1']['room']) # The room here is the Blood Eagle mumble room
 		teamMove(teamDS, CONFIG['team2']['room']) # The number here is the Diamond Sword room
+		#move_missed_to_fat
 	end
 
-	def simpleSelect(team, role, severity, playerlist) # Ask Mcoot about this
+	def simpleSelect(team, role, severity, playerlist, selected_fats) # Ask Mcoot about this
 		skillyml = {}
 		playerDataList = YAML.load_file('HashStore.yml')
 		for i in 0..playerlist.length-1 do
@@ -118,6 +151,10 @@ class Shaz_Bot
 		for i in 0..skillyml.length-1 do
 			if skillyml[:"#{skillyml.keys[i]}"].include?(randomNumber) then
 				puts "#{skillyml.keys[i]} picked for #{team}'s #{role} and their score is #{skillyml[skillyml.keys[i]]}"
+				if playerlist[:"#{skillyml.keys[i]}"] == true then
+					selected_fats << "#{skillyml.keys[i]}"
+					puts "and they were a fat who were selected"
+				end
 				playerlist.delete(skillyml.keys[i])
 				return "#{skillyml.keys[i]}"
 			end
@@ -134,11 +171,14 @@ class Shaz_Bot
 
 	def userInput
 		@cli.on_text_message do |msg|
-			puts msg.message
-			puts "#{get_username_from_id(msg.actor)}"
-			hashYmlUpdate
-			hashYmlUpdate
-			teamCompositionGet
+			puts "#{get_username_from_id(msg.actor)} said #{msg.message}"
+			if msg.message == "return" then
+				puts "The return command was used"
+				return_to_pugs
+			else
+				hashYmlUpdate
+				teamCompositionGet
+			end
 		end
 	end
 end
