@@ -31,6 +31,13 @@ class Shaz_Bot
 	def get_userkey(id)
 		@cli.user.keys[id]
 	end
+
+	def user_say(id, text)
+		@cli.text_user(id, text)
+	rescue
+		puts "was unable to message user with ID #{id}, is there a problem here?"
+		return 1
+	end
 	
 	def move_missed_to_fat
 		for i in 0..@cli.users.count-1 do
@@ -46,7 +53,7 @@ class Shaz_Bot
 	def return_to_pugs
 		for i in 0..@cli.users.count-1 do
 			userkey = @cli.users.keys[i]
-			if @cli.users[userkey].channel_id == CONFIG['team1']['room'] or CONFIG['team2']['room'] then
+			if @cli.users[userkey].channel_id == CONFIG['team1']['room'] or @cli.users[userkey].channel_id == CONFIG['team2']['room'] then
 				@cli.move_user(userkey,CONFIG['waiting_players']['normal'])
 			end
 		end
@@ -172,6 +179,9 @@ class Shaz_Bot
 	def userInput
 		@cli.on_text_message do |msg|
 			puts "#{get_username_from_id(msg.actor)} said #{msg.message}"
+			if msg.message.include? "echo" then
+				user_say(msg.actor, "you said \"#{msg.message.sub!("echo ","")}\"")
+			end
 			if msg.message == "return" then
 				puts "The return command was used"
 				return_to_pugs
@@ -185,6 +195,13 @@ end
 
 shazbot = Shaz_Bot.new
 shazbot.cli.connect
+shazbot.cli.on_connected do
+	begin
+		shazbot.cli.set_comment(CONFIG['comment'])
+	rescue
+		puts "ERROR, YOU DUN GOOFED"
+	end
+end
 loop do
 	sleep(1)
 end
