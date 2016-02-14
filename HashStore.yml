@@ -23,6 +23,7 @@
     :offence: 6.0
     :snipe: 5.0
   :skillTotal: 31.0
+  :pick_count: 2
 :611f56cb7ab978681736d1a1a2dd32a75062060d:
   :name: PSYCHODONKEYMAN
   :hash: 611f56cb7ab978681736d1a1a2dd32a75062060d
@@ -59,7 +60,7 @@
     :snipe: 8.0
   :skillTotal: 36.0
 :84465995b53eedab379dede6d904e4a8e80e7803:
-  :name: gh0stel
+  :name: hunttheghost
   :hash: 84465995b53eedab379dede6d904e4a8e80e7803
   :playerSkills:
     :hof: 3.0
@@ -70,8 +71,9 @@
     :offence: 6.0
     :snipe: 2.0
   :skillTotal: 28.0
+  :pick_count: 2
 :38192dd9128f131b72b10a63fac8fef2e8471f24:
-  :name: 'SnX// '
+  :name: SaniCs.
   :hash: 38192dd9128f131b72b10a63fac8fef2e8471f24
   :playerSkills:
     :hof: 3.0
@@ -94,6 +96,7 @@
     :offence: 5.0
     :snipe: 4.0
   :skillTotal: 39.0
+  :pick_count: 2
 :d62fd6d1f3153fb6e602ece3dc1933c04385a6aa:
   :name: Bordozer
   :hash: d62fd6d1f3153fb6e602ece3dc1933c04385a6aa
@@ -166,6 +169,7 @@
     :offence: 8.0
     :snipe: 1.0
   :skillTotal: 28.0
+  :pick_count: 2
 :b1e97336f2871b032d49dde7c4c6698a4af96498:
   :name: Freefood
   :hash: b1e97336f2871b032d49dde7c4c6698a4af96498
@@ -276,7 +280,7 @@
     :snipe: 1.0
   :skillTotal: 17.0
 :625bef57cc4d6e86921eda5a5bed54a6cf5f9ba7:
-  :name: holy
+  :name: Holy
   :hash: 625bef57cc4d6e86921eda5a5bed54a6cf5f9ba7
   :playerSkills:
     :hof: 2.0
@@ -287,6 +291,7 @@
     :offence: 6.0
     :snipe: 3.0
   :skillTotal: 34.0
+  :pick_count: 2
 :6d7a0736dd0d673a10cb44dde9292440c4e2aec5:
   :name: Vendrell (Tanz Player 2015)
   :hash: 6d7a0736dd0d673a10cb44dde9292440c4e2aec5
@@ -394,6 +399,7 @@
     :offence: 8.0
     :snipe: 1.0
   :skillTotal: 28.0
+  :pick_count: 2
 :8bb69e710569ba6c966800d8ea7d47b3445636fb:
   :name: Rogopotato
   :hash: 8bb69e710569ba6c966800d8ea7d47b3445636fb
@@ -550,6 +556,7 @@
     :offence: 6.0
     :snipe: 6.0
   :skillTotal: 43.0
+  :pick_count: 1
 :d057d2ad3cf9514eddb8b177bc8e9ff565c366c3:
   :name: Bloody
   :hash: d057d2ad3cf9514eddb8b177bc8e9ff565c366c3
@@ -585,7 +592,7 @@
     :fragging: 5.0
     :offence: 5.0
     :snipe: 6.0
-  :skillTotal: 29.0
+  :skillTotal: 34.0
 :7180e01b2bf27c97e6c0c5e87aa60bf1da5a2870:
   :name: babymonkey
   :hash: 7180e01b2bf27c97e6c0c5e87aa60bf1da5a2870
@@ -683,8 +690,9 @@
     :offence: 7.0
     :snipe: 5.0
   :skillTotal: 39.0
+  :pick_count: 2
 :36aec293d566ead2993be16aa178825ba7b1761d:
-  :name: Trick
+  :name: Triick
   :hash: 36aec293d566ead2993be16aa178825ba7b1761d
   :playerSkills:
     :hof: 4.0
@@ -695,6 +703,7 @@
     :offence: 5.0
     :snipe: 1.0
   :skillTotal: 28.0
+  :pick_count: 2
 :11062d746cc2b66949924d8b4129638657ac0474:
   :name: MotionKing
   :hash: 11062d746cc2b66949924d8b4129638657ac0474
@@ -744,7 +753,7 @@
     :snipe: 1.0
   :skillTotal: 17.0
 :d783f656bb3a769ed220762c0306b8a1e7616132:
-  :name: GrandmaTaco
+  :name: Grandmataco
   :hash: d783f656bb3a769ed220762c0306b8a1e7616132
   :playerSkills:
     :hof: 5.0
@@ -756,7 +765,7 @@
     :snipe: 1.0
   :skillTotal: 20.0
 :20be86e11ab566c8e2d1badd5bb4b9699a234ddc:
-  :name: EpsilonAlpha
+  :name: EA Games
   :hash: 20be86e11ab566c8e2d1badd5bb4b9699a234ddc
   :playerSkills:
     :hof: 3.0
@@ -923,6 +932,7 @@
     :offence: 4.0
     :snipe: 1.0
   :skillTotal: 17.0
+  :pick_count: 2
 :f3d0b6ccf55eb2f712d9c87bded7fdba322e7707:
   :name: Cakefish
   :hash: f3d0b6ccf55eb2f712d9c87bded7fdba322e7707
@@ -971,6 +981,7 @@
     :offence: 4.0
     :snipe: 1.0
   :skillTotal: 17.0
+  :pick_count: 2
 :bd55f306a6a792fc99d61e7c407d952e5ac48bab:
   :name: eddmayne
   :hash: bd55f306a6a792fc99d61e7c407d952e5ac48bab
@@ -1102,6 +1113,7 @@
     :snipe: 1.0
     :gamesense: 3.0
     :fragging: 3.0
+  :skillTotal: 17.0
 :fefabdbb380ce75c3db9949d87ff49d829ea5a32:
   :name: Kitanae
   :hash: fefabdbb380ce75c3db9949d87ff49d829ea5a32
@@ -1114,9 +1126,253 @@
     :gamesense: 3.0
     :fragging: 3.0
   :skillTotal: 17.0
+  :pick_count: 1
 :62bf7d770f2b2c58e45d433065732f7fa1bb346f:
   :name: indi
   :hash: 62bf7d770f2b2c58e45d433065732f7fa1bb346f
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:83f314a2bbd7c624ffe25c0b18e1d4d5c437a9a5:
+  :name: JackTheLuck
+  :hash: 83f314a2bbd7c624ffe25c0b18e1d4d5c437a9a5
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:79bc50516faf545b3e7048b4c44ba5e504d02a66:
+  :name: algor1ythm
+  :hash: 79bc50516faf545b3e7048b4c44ba5e504d02a66
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:00b7c0ae7ac264fa97d389318e5665577a474e0e:
+  :name: neogenetix
+  :hash: 00b7c0ae7ac264fa97d389318e5665577a474e0e
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:5194d6ca27d5316c1e77e850a015062306a6ba46:
+  :name: SirVomitsalot
+  :hash: 5194d6ca27d5316c1e77e850a015062306a6ba46
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:bf51397cfa7bf2730865bca00b5777aa6432ffa3:
+  :name: DxandxC
+  :hash: bf51397cfa7bf2730865bca00b5777aa6432ffa3
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:27f8b67f47811a11c2c6ce868a5444d5ab53c98c:
+  :name: Funktion
+  :hash: 27f8b67f47811a11c2c6ce868a5444d5ab53c98c
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+  :pick_count: 2
+:d809b6f9567e5242d5474527c9c781248934711a:
+  :name: Westyy
+  :hash: d809b6f9567e5242d5474527c9c781248934711a
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:a612c43942399efe626656a6da827dd07bf9bc5d:
+  :name: RnRau
+  :hash: a612c43942399efe626656a6da827dd07bf9bc5d
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+  :pick_count: 2
+:657db3648b5af895a948826c4d8b2c6661cd65de:
+  :name: scarygoat
+  :hash: 657db3648b5af895a948826c4d8b2c6661cd65de
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:f0f766a41e08c41f5d5675593587983012b0ee55:
+  :name: Test
+  :hash: f0f766a41e08c41f5d5675593587983012b0ee55
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:4d6465a5acb68e7c406f614e1371ee7313708a31:
+  :name: GreasedMonkey
+  :hash: 4d6465a5acb68e7c406f614e1371ee7313708a31
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:0a93934a6f9122acf5c5e71443843fcfb30bcbf6:
+  :name: RowanHenry
+  :hash: 0a93934a6f9122acf5c5e71443843fcfb30bcbf6
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:c4f9b102440434b3fbc99d080ede7ce3e7ffa2ab:
+  :name: FractiousBadger
+  :hash: c4f9b102440434b3fbc99d080ede7ce3e7ffa2ab
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:cfd7589b54b1411ee344cb265b716debc4c49475:
+  :name: aLoaf
+  :hash: cfd7589b54b1411ee344cb265b716debc4c49475
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:56b3b5d190ec9ec1bc7523ee9f8fcb240cc1823f:
+  :name: edsternoble6
+  :hash: 56b3b5d190ec9ec1bc7523ee9f8fcb240cc1823f
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:556f7b01adbf75a083dc83e1ac129554cb990349:
+  :name: Foreplay
+  :hash: 556f7b01adbf75a083dc83e1ac129554cb990349
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:a2b11ff576ae3e748d512166752cc8315ae7d8e2:
+  :name: Sku1d
+  :hash: a2b11ff576ae3e748d512166752cc8315ae7d8e2
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:863d1b762a8b01d84bc3961740e118746df978e3:
+  :name: obelus
+  :hash: 863d1b762a8b01d84bc3961740e118746df978e3
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+:4f813ce945ef19a155f9a38a83941bcab89515a3:
+  :name: CrouchSoft
+  :hash: 4f813ce945ef19a155f9a38a83941bcab89515a3
+  :playerSkills:
+    :hof: 2.0
+    :ld: 2.0
+    :cap: 2.0
+    :offence: 4.0
+    :snipe: 1.0
+    :gamesense: 3.0
+    :fragging: 3.0
+  :skillTotal: 17.0
+  :pick_count: 2
+:261457738b6f211eb0df26e98a1cd11660d14168:
+  :name: Cant
+  :hash: 261457738b6f211eb0df26e98a1cd11660d14168
   :playerSkills:
     :hof: 2.0
     :ld: 2.0

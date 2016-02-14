@@ -106,6 +106,17 @@ class Shaz_Bot
 		end
 	end
 
+	def pug_pick_count(player_hash)
+		player_yml = YAML.load_file('HashStore.yml')
+		begin
+			player_yml[:"#{player_hash}"][:pick_count] = player_yml[:"#{player_hash}"][:pick_count] + 1
+			File.open('HashStore.yml','w') {|f1| f1.write(player_yml.to_yaml)}
+		rescue
+			player_yml[:"#{player_hash}"][:pick_count] = 1
+			File.open('HashStore.yml','w') {|f1| f1.write(player_yml.to_yaml)}
+		end
+		end
+
 	def teamCompositionGet
 		teamBE = {}
 		teamDS = {}
@@ -118,10 +129,10 @@ class Shaz_Bot
 		end
 		for i in 0..@roleList.length-1 do
 			playerSelected = simpleSelect(CONFIG['team1']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList, selected_fats)
-			pp playerSelected
+			pug_pick_count(playerSelected)
 			teamBE[:"#{@roleList.keys[i]}"] = playerSelected
 			playerSelected = simpleSelect(CONFIG['team2']['name'], @roleList[:"role#{i+1}"], 3, onlinePlayerList, selected_fats)
-			pp playerSelected
+			pug_pick_count(playerSelected)
 			teamDS[:"#{@roleList.keys[i]}"] = playerSelected
 		end
 		while onlinePlayerList.has_value?(true) do # this loop is used to first check for any fat people not picked
@@ -169,9 +180,6 @@ class Shaz_Bot
 	end
 
 	def relativeSkillSelect(team, severity, playerlist) # A sort to select players only by skill, not role, just an idea atm.
-		skillyml = {}
-		playerDataList = YAML.load_file('HashStore.yml')
-		for i in 0..playerlist.length-1 do
 			skillyml[:"#{playerlist.keys[i]}"] = (playerDataList[:"#{playerlist.keys[i]}"][:playerSkills][:gamesense]*1.3+playerDataList[:"#{playerlist.keys[i]}"][:playerSkills][:fragging]*10).round
 		end
 	end
@@ -181,6 +189,13 @@ class Shaz_Bot
 			puts "#{get_username_from_id(msg.actor)} said #{msg.message}"
 			if msg.message.include? "echo" then
 				user_say(msg.actor, "you said \"#{msg.message.sub!("echo ","")}\"")
+			end
+			if msg.message.include? "@all" then
+				for i in 0..@cli.users.count-1 do
+					userkey = @cli.users.keys[i]
+					#user_say(msg.actor, msg.message.sub("@all ", ""))
+					user_say(userkey, msg.message.sub("@all ", ""))
+				end
 			end
 			if msg.message == "return" then
 				puts "The return command was used"
